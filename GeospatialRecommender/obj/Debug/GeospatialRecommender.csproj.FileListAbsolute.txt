@@ -1,0 +1,9 @@
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\GeospatialRecommender.exe.config
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.csprojResolveAssemblyReference.cache
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.Form1.resources
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.Properties.Resources.resources
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.csproj.GenerateResource.Cache
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\GeospatialRecommender.exe
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\GeospatialRecommender.pdb
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.exe
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.pdb
