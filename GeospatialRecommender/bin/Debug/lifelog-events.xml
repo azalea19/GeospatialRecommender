@@ -32,6 +32,7 @@
 <lle:lat>999</lle:lat>
 <lle:long>999</lle:long>
 </lle:location>
+<lle:datetimestamp>datetimestamp</lle:datetimestamp>
 </lle:photo>
  </lle:Event>
  <lle:Event>
@@ -54,9 +55,10 @@
 <lle:eventid>ID4</lle:eventid>
 <lle:tracklog>
 <lle:filepath>/tracklog/track.gpx</lle:filepath>
-<lle:data>
-.....
-</lle:data>
+<lle:location>
+<lle:lat>999</lle:lat>
+<lle:long>999</lle:long>
+</lle:location>
 <lle:start-time>
 <lle:datetimestamp>datetimestamp</lle:datetimestamp>
 </lle:start-time>

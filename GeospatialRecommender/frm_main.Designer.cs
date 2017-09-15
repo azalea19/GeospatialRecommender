@@ -1,6 +1,6 @@
 ﻿namespace GeospatialRecommender
 {
-    partial class Form1
+    partial class frm_main
     {
         /// <summary>
         /// Required designer variable.
@@ -41,14 +41,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 390);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frm_main";
+            this.Text = "Geospatial Recommender";
             this.ResumeLayout(false);
 
         }

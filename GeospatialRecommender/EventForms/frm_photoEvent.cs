@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GeospatialRecommender
+namespace GeospatialRecommender.EventForms
 {
-    public partial class Form1 : Form
+    public partial class frm_photoEvent : Form
     {
-        public Form1()
+        public frm_photoEvent()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            EventReader.GetEvents("lifelog-events.xml");
         }
     }
 }
