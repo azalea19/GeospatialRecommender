@@ -8,7 +8,7 @@ namespace GeospatialRecommender
 {
     class TweetEvent : Event
     {
-        public TweetEvent(Location location, string dateTimeStamp, string tweetText) : base(location, dateTimeStamp)
+        public TweetEvent(GRLocation location, string dateTimeStamp, string tweetText) : base(location, dateTimeStamp)
         {
             this.tweetText = tweetText;
         }

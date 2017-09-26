@@ -1,6 +1,6 @@
 ﻿namespace GeospatialRecommender.EventForms
 {
-    partial class btn_cancel
+    partial class frm_address
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@
             this.lbl_unit = new System.Windows.Forms.Label();
             this.lbl_postcode = new System.Windows.Forms.Label();
             this.lbl_suburb = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_unit = new System.Windows.Forms.TextBox();
+            this.txt_street = new System.Windows.Forms.TextBox();
+            this.txt_suburb = new System.Windows.Forms.TextBox();
+            this.txt_postcode = new System.Windows.Forms.TextBox();
             this.btn_submit = new System.Windows.Forms.Button();
             this.btn_ = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -76,33 +76,33 @@
             this.lbl_suburb.TabIndex = 3;
             this.lbl_suburb.Text = "Suburb:";
             // 
-            // textBox1
+            // txt_unit
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_unit.Location = new System.Drawing.Point(78, 6);
+            this.txt_unit.Name = "txt_unit";
+            this.txt_unit.Size = new System.Drawing.Size(273, 20);
+            this.txt_unit.TabIndex = 4;
             // 
-            // textBox2
+            // txt_street
             // 
-            this.textBox2.Location = new System.Drawing.Point(78, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(273, 20);
-            this.textBox2.TabIndex = 5;
+            this.txt_street.Location = new System.Drawing.Point(78, 33);
+            this.txt_street.Name = "txt_street";
+            this.txt_street.Size = new System.Drawing.Size(273, 20);
+            this.txt_street.TabIndex = 5;
             // 
-            // textBox3
+            // txt_suburb
             // 
-            this.textBox3.Location = new System.Drawing.Point(78, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(273, 20);
-            this.textBox3.TabIndex = 6;
+            this.txt_suburb.Location = new System.Drawing.Point(78, 58);
+            this.txt_suburb.Name = "txt_suburb";
+            this.txt_suburb.Size = new System.Drawing.Size(273, 20);
+            this.txt_suburb.TabIndex = 6;
             // 
-            // textBox4
+            // txt_postcode
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 83);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(273, 20);
-            this.textBox4.TabIndex = 7;
+            this.txt_postcode.Location = new System.Drawing.Point(78, 83);
+            this.txt_postcode.Name = "txt_postcode";
+            this.txt_postcode.Size = new System.Drawing.Size(273, 20);
+            this.txt_postcode.TabIndex = 7;
             // 
             // btn_submit
             // 
@@ -112,6 +112,7 @@
             this.btn_submit.TabIndex = 8;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // btn_
             // 
@@ -121,6 +122,7 @@
             this.btn_.TabIndex = 9;
             this.btn_.Text = "Cancel";
             this.btn_.UseVisualStyleBackColor = true;
+            this.btn_.Click += new System.EventHandler(this.btn__Click);
             // 
             // btn_cancel
             // 
@@ -129,16 +131,17 @@
             this.ClientSize = new System.Drawing.Size(363, 138);
             this.Controls.Add(this.btn_);
             this.Controls.Add(this.btn_submit);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_postcode);
+            this.Controls.Add(this.txt_suburb);
+            this.Controls.Add(this.txt_street);
+            this.Controls.Add(this.txt_unit);
             this.Controls.Add(this.lbl_suburb);
             this.Controls.Add(this.lbl_postcode);
             this.Controls.Add(this.lbl_unit);
             this.Controls.Add(this.lbl_street);
             this.Name = "btn_cancel";
             this.Text = "Add Address";
+            this.Load += new System.EventHandler(this.frm_address_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,10 +153,10 @@
         private System.Windows.Forms.Label lbl_unit;
         private System.Windows.Forms.Label lbl_postcode;
         private System.Windows.Forms.Label lbl_suburb;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_unit;
+        private System.Windows.Forms.TextBox txt_street;
+        private System.Windows.Forms.TextBox txt_suburb;
+        private System.Windows.Forms.TextBox txt_postcode;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_;
     }

@@ -42,38 +42,42 @@
             this.pb_preview.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_preview.Location = new System.Drawing.Point(12, 12);
             this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(276, 211);
+            this.pb_preview.Size = new System.Drawing.Size(320, 240);
+            this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_preview.TabIndex = 0;
             this.pb_preview.TabStop = false;
             // 
             // dtPicker
             // 
-            this.dtPicker.Location = new System.Drawing.Point(12, 239);
+            this.dtPicker.Location = new System.Drawing.Point(12, 258);
             this.dtPicker.Name = "dtPicker";
-            this.dtPicker.Size = new System.Drawing.Size(276, 20);
+            this.dtPicker.Size = new System.Drawing.Size(320, 20);
             this.dtPicker.TabIndex = 1;
+            this.dtPicker.ValueChanged += new System.EventHandler(this.dtPicker_ValueChanged);
             // 
             // btn_choosePhoto
             // 
-            this.btn_choosePhoto.Location = new System.Drawing.Point(12, 264);
+            this.btn_choosePhoto.Location = new System.Drawing.Point(12, 286);
             this.btn_choosePhoto.Name = "btn_choosePhoto";
             this.btn_choosePhoto.Size = new System.Drawing.Size(88, 42);
             this.btn_choosePhoto.TabIndex = 2;
             this.btn_choosePhoto.Text = "Upload Photo";
             this.btn_choosePhoto.UseVisualStyleBackColor = true;
+            this.btn_choosePhoto.Click += new System.EventHandler(this.btn_choosePhoto_Click);
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(106, 265);
+            this.btn_submit.Location = new System.Drawing.Point(134, 286);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(88, 43);
             this.btn_submit.TabIndex = 3;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(200, 264);
+            this.btn_cancel.Location = new System.Drawing.Point(244, 286);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(88, 43);
             this.btn_cancel.TabIndex = 4;
@@ -84,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 319);
+            this.ClientSize = new System.Drawing.Size(350, 347);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.btn_choosePhoto);
@@ -92,6 +96,7 @@
             this.Controls.Add(this.pb_preview);
             this.Name = "frm_photoEvent";
             this.Text = "Add Photo Event";
+            this.Load += new System.EventHandler(this.frm_photoEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).EndInit();
             this.ResumeLayout(false);
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeospatialRecommender
 {
-    public struct Location
+    public struct GRLocation
     {
         public float latitude;
         public float longitude;
@@ -15,25 +15,25 @@ namespace GeospatialRecommender
     public abstract class Event
     {
         //Public members
-        public Location GetLocation()
+        public GRLocation GetLocation()
         {
             return eventLocation;
         }
 
-        public void SetLocation(Location location)
+        public void SetLocation(GRLocation location)
         {
             this.eventLocation = location;
         }
 
         //Protected members
-        protected Event(Location location, string dateTimeStamp)
+        protected Event(GRLocation location, string dateTimeStamp)
         {
             this.eventLocation = location;
             this.dateTimeStamp = dateTimeStamp;
         }
 
         //Private members
-        private Location eventLocation;
+        private GRLocation eventLocation;
         private string dateTimeStamp;
     }
 }

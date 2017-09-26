@@ -61,7 +61,7 @@ namespace GeospatialRecommender
         {
             XmlNode dateTimeNode = GetNodeWithTag("datetimestamp", tweetNode, nsmgr);
             XmlNode tweetTextNode = GetNodeWithTag("text", tweetNode, nsmgr);
-            Location location = GetLocationFromNode(tweetNode, nsmgr);
+            GRLocation location = GetLocationFromNode(tweetNode, nsmgr);
             return new TweetEvent(location, dateTimeNode.InnerText, tweetTextNode.InnerText);
         }
 
@@ -70,7 +70,7 @@ namespace GeospatialRecommender
             XmlNode dateTimeNode = GetNodeWithTag("datetimestamp", photoEventNode, nsmgr);
             XmlNode photoNode = GetNodeWithTag("photo", photoEventNode, nsmgr);
             XmlNode filepathNode = GetNodeWithTag("filepath", photoEventNode, nsmgr);
-            Location location = GetLocationFromNode(photoEventNode, nsmgr);
+            GRLocation location = GetLocationFromNode(photoEventNode, nsmgr);
 
             return new PhotoEvent(location, dateTimeNode.InnerText, filepathNode.InnerText);
         }
@@ -80,7 +80,7 @@ namespace GeospatialRecommender
             XmlNode dateTimeNode = GetNodeWithTag("datetimestamp", statusNode, nsmgr);
             XmlNode statusTextNode = GetNodeWithTag("text", statusNode, nsmgr);
 
-            Location location = GetLocationFromNode(statusNode, nsmgr);
+            GRLocation location = GetLocationFromNode(statusNode, nsmgr);
             return new StatusUpdateEvent(location, dateTimeNode.InnerText, statusTextNode.InnerText);
         }
 
@@ -91,7 +91,7 @@ namespace GeospatialRecommender
             XmlNode dtStartNode = GetNodeWithTag("datetimestamp", startTimeNode, nsmgr);
             XmlNode dtEndNode = GetNodeWithTag("datetimestamp", endTimeNode, nsmgr);
             XmlNode filepathNode = GetNodeWithTag("filepath", videoEventNode, nsmgr);
-            Location location = GetLocationFromNode(videoEventNode, nsmgr);
+            GRLocation location = GetLocationFromNode(videoEventNode, nsmgr);
 
             return new VideoEvent(location, filepathNode.InnerText, dtStartNode.InnerText, dtEndNode.InnerText);
         }
@@ -103,19 +103,19 @@ namespace GeospatialRecommender
             XmlNode dtStartNode = GetNodeWithTag("datetimestamp", startTimeNode, nsmgr);
             XmlNode dtEndNode = GetNodeWithTag("datetimestamp", endTimeNode, nsmgr);
             XmlNode filepathNode = GetNodeWithTag("filepath", trackEventNode, nsmgr);
-            Location location = GetLocationFromNode(trackEventNode, nsmgr);
+            GRLocation location = GetLocationFromNode(trackEventNode, nsmgr);
 
             return new TrackLogEvent(location, filepathNode.InnerText, dtStartNode.InnerText, dtEndNode.InnerText);
 
         }
 
-        private static Location GetLocationFromNode(XmlNode parent, XmlNamespaceManager nsmgr)
+        private static GRLocation GetLocationFromNode(XmlNode parent, XmlNamespaceManager nsmgr)
         {
             XmlNode locationNode = GetNodeWithTag("location", parent, nsmgr);
             XmlNode latNode = GetNodeWithTag("lat", locationNode, nsmgr);
             XmlNode longNode = GetNodeWithTag("long", locationNode, nsmgr);
 
-            Location location = new Location();
+            GRLocation location = new GRLocation();
             location.latitude = Convert.ToInt32(latNode.InnerText);
             location.longitude = Convert.ToInt32(latNode.InnerText);
 

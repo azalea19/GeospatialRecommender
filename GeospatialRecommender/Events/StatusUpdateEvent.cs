@@ -8,7 +8,7 @@ namespace GeospatialRecommender
 {
     public class StatusUpdateEvent : Event
     {
-        public StatusUpdateEvent(Location location, string dateTimeStamp, string text) : base(location,dateTimeStamp)
+        public StatusUpdateEvent(GRLocation location, string dateTimeStamp, string text) : base(location,dateTimeStamp)
         {
             this.statusText = text;
         }

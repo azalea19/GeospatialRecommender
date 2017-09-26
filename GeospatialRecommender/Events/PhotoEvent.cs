@@ -8,7 +8,7 @@ namespace GeospatialRecommender
 {
     public class PhotoEvent : Event
     {
-        public PhotoEvent(Location location, string dateTimeStamp, string photoFilePath) : base(location, dateTimeStamp)
+        public PhotoEvent(GRLocation location, string dateTimeStamp, string photoFilePath) : base(location, dateTimeStamp)
         {
             this.photoFilePath = photoFilePath;
         }
