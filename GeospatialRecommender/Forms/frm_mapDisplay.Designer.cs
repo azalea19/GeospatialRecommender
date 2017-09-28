@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.grp_eventDisplay = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_eventType = new System.Windows.Forms.ComboBox();
             this.elementHost_map = new System.Windows.Forms.Integration.ElementHost();
             this.MyMapUserControl = new GeospatialRecommender.MapUserControl();
-            this.btn_addPolygon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.grp_eventDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -46,7 +49,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btn_addPolygon);
+            this.splitContainer1.Panel1.Controls.Add(this.grp_eventDisplay);
             // 
             // splitContainer1.Panel2
             // 
@@ -54,6 +57,47 @@
             this.splitContainer1.Size = new System.Drawing.Size(692, 425);
             this.splitContainer1.SplitterDistance = 230;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // grp_eventDisplay
+            // 
+            this.grp_eventDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_eventDisplay.Controls.Add(this.label1);
+            this.grp_eventDisplay.Controls.Add(this.cmb_eventType);
+            this.grp_eventDisplay.Location = new System.Drawing.Point(12, 12);
+            this.grp_eventDisplay.Name = "grp_eventDisplay";
+            this.grp_eventDisplay.Size = new System.Drawing.Size(201, 89);
+            this.grp_eventDisplay.TabIndex = 0;
+            this.grp_eventDisplay.TabStop = false;
+            this.grp_eventDisplay.Text = "Display Events";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Event Type";
+            // 
+            // cmb_eventType
+            // 
+            this.cmb_eventType.FormattingEnabled = true;
+            this.cmb_eventType.Items.AddRange(new object[] {
+            "(None)",
+            "Tweet ",
+            "Facebook Status Update",
+            "Photo",
+            "Video",
+            "Tracklog",
+            "All"});
+            this.cmb_eventType.Location = new System.Drawing.Point(9, 47);
+            this.cmb_eventType.Name = "cmb_eventType";
+            this.cmb_eventType.Size = new System.Drawing.Size(185, 21);
+            this.cmb_eventType.TabIndex = 0;
+            this.cmb_eventType.Text = "(None)";
+            this.cmb_eventType.SelectedIndexChanged += new System.EventHandler(this.cmb_eventType_SelectedIndexChanged);
             // 
             // elementHost_map
             // 
@@ -65,18 +109,7 @@
             this.elementHost_map.Name = "elementHost_map";
             this.elementHost_map.Size = new System.Drawing.Size(458, 425);
             this.elementHost_map.TabIndex = 1;
-            this.elementHost_map.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.elementHost_map_ChildChanged);
             this.elementHost_map.Child = this.MyMapUserControl;
-            // 
-            // btn_addPolygon
-            // 
-            this.btn_addPolygon.Location = new System.Drawing.Point(61, 61);
-            this.btn_addPolygon.Name = "btn_addPolygon";
-            this.btn_addPolygon.Size = new System.Drawing.Size(75, 23);
-            this.btn_addPolygon.TabIndex = 0;
-            this.btn_addPolygon.Text = "Add Polygon";
-            this.btn_addPolygon.UseVisualStyleBackColor = true;
-            this.btn_addPolygon.Click += new System.EventHandler(this.btn_addPolygon_Click);
             // 
             // frm_mapDisplay
             // 
@@ -91,6 +124,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.grp_eventDisplay.ResumeLayout(false);
+            this.grp_eventDisplay.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -100,6 +135,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Integration.ElementHost elementHost_map;
         private MapUserControl MyMapUserControl;
-        private System.Windows.Forms.Button btn_addPolygon;
+        private System.Windows.Forms.GroupBox grp_eventDisplay;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_eventType;
     }
 }

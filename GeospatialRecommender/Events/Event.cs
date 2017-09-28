@@ -30,10 +30,12 @@ namespace GeospatialRecommender
         {
             this.eventLocation = location;
             this.dateTimeStamp = dateTimeStamp;
+            ID = 0;
         }
 
         //Private members
         private GRLocation eventLocation;
         private string dateTimeStamp;
+        public int ID;
     }
 }

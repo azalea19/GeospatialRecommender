@@ -35,6 +35,7 @@
             this.btn_addlog = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_help = new System.Windows.Forms.Button();
+            this.btn_changeLocation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_addPhoto
@@ -59,7 +60,7 @@
             // 
             // btn_addVideo
             // 
-            this.btn_addVideo.Location = new System.Drawing.Point(57, 58);
+            this.btn_addVideo.Location = new System.Drawing.Point(12, 58);
             this.btn_addVideo.Name = "btn_addVideo";
             this.btn_addVideo.Size = new System.Drawing.Size(84, 40);
             this.btn_addVideo.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // btn_addTweet
             // 
-            this.btn_addTweet.Location = new System.Drawing.Point(147, 58);
+            this.btn_addTweet.Location = new System.Drawing.Point(102, 58);
             this.btn_addTweet.Name = "btn_addTweet";
             this.btn_addTweet.Size = new System.Drawing.Size(86, 40);
             this.btn_addTweet.TabIndex = 3;
@@ -107,11 +108,22 @@
             this.btn_help.UseVisualStyleBackColor = true;
             this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
             // 
+            // btn_changeLocation
+            // 
+            this.btn_changeLocation.Location = new System.Drawing.Point(194, 58);
+            this.btn_changeLocation.Name = "btn_changeLocation";
+            this.btn_changeLocation.Size = new System.Drawing.Size(84, 40);
+            this.btn_changeLocation.TabIndex = 7;
+            this.btn_changeLocation.Text = "Change Location";
+            this.btn_changeLocation.UseVisualStyleBackColor = true;
+            this.btn_changeLocation.Click += new System.EventHandler(this.btn_changeLocation_Click);
+            // 
             // frm_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 147);
+            this.Controls.Add(this.btn_changeLocation);
             this.Controls.Add(this.btn_help);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_addlog);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Button btn_addlog;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_help;
+        private System.Windows.Forms.Button btn_changeLocation;
     }
 }

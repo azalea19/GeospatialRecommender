@@ -35,7 +35,6 @@ namespace GeospatialRecommender.EventForms
             this.ShowDialog();
         }
 
-        
         private void frm_photoEvent_Load(object sender, EventArgs e)
         {
             

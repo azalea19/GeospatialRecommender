@@ -22,26 +22,14 @@ namespace GeospatialRecommender.EventForms
             MyMapUserControl.Map.CredentialsProvider = new ApplicationIdCredentialsProvider("AqXJFUzQQmH8NRmKObTCFXN_F0_0998xlZOdMhxr1rQWVUh9FcJ--LgR3Ns-0T6l");
         }
 
-        private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
-        {
-
-        }
-
         private void frm_mapDisplay_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void elementHost_map_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        private void cmb_eventType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void btn_addPolygon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

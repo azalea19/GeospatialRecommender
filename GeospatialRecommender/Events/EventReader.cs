@@ -42,7 +42,7 @@ namespace GeospatialRecommender
             File.WriteAllText(filePath, text);
         }
 
-        //Returns a node if the parent has a child that contains a node with elementName
+        //Returns a node if the parent has a child that contains a node with elementName.
         private static XmlNode GetNodeWithTag(string elementName, XmlNode parentNode, XmlNamespaceManager nsmgr)
         {
             //Iterate over each child node

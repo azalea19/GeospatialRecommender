@@ -17,3 +17,10 @@ C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\Ge
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_mapDisplay.resources
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_videoEvent.resources
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_tweetEvent.resources
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_statusUpdateEvent.resources
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\BingMapsRESTToolkit.dll
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\BingMapsRESTToolkit.pdb
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\BingMapsRESTToolkit.xml
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_trackLogEvent.resources

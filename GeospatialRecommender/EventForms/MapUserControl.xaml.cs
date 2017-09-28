@@ -24,6 +24,7 @@ namespace GeospatialRecommender
         public MapUserControl()
         {
             InitializeComponent();
+            addEventForm = new frm_add();
         }
 
         private void OnMapDoubleClick(object sender, MouseButtonEventArgs e)
@@ -35,13 +36,16 @@ namespace GeospatialRecommender
 
             //Convert the mouse coordinates to a location on the map.
             Location pinLocation = Map.ViewportPointToLocation(mousePosition);
+     
 
             //The pushpin to add to the map.
             Pushpin pin = new Pushpin();
             pin.Location = pinLocation;
 
-            // Adds the pushpin to the map.
+            //Adds the pushpin to the map.
             Map.Children.Add(pin);
+           
+            addEventForm.ShowForm(pinLocation);
         }
 
         private void OnMouseEnter(object sender, EventArgs e)
@@ -75,6 +79,6 @@ namespace GeospatialRecommender
             return value;
         }
 
-
+        private frm_add addEventForm;
     }
 }

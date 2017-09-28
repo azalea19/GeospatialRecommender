@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BingMapsRESTToolkit, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BingMapsRESTToolkit.1.0.5\lib\net45\BingMapsRESTToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Maps.MapControl.WPF">
       <HintPath>..\Dependancies\Microsoft.Maps.MapControl.WPF.dll</HintPath>
     </Reference>
@@ -40,6 +44,8 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -60,10 +66,29 @@
     <Compile Include="EventForms\frm_address.Designer.cs">
       <DependentUpon>frm_address.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_mapDisplay.cs">
+    <Compile Include="EventForms\frm_trackLogEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_mapDisplay.Designer.cs">
+    <Compile Include="EventForms\frm_trackLogEvent.Designer.cs">
+      <DependentUpon>frm_trackLogEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventForms\frm_tweetEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForms\frm_tweetEvent.Designer.cs">
+      <DependentUpon>frm_tweetEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventForms\frm_videoEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForms\frm_videoEvent.Designer.cs">
+      <DependentUpon>frm_videoEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\Geocoder.cs" />
+    <Compile Include="Forms\frm_mapDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_mapDisplay.Designer.cs">
       <DependentUpon>frm_mapDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="EventForms\frm_photoEvent.cs">
@@ -72,20 +97,27 @@
     <Compile Include="EventForms\frm_photoEvent.Designer.cs">
       <DependentUpon>frm_photoEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventForms\frm_statusUpdateEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForms\frm_statusUpdateEvent.Designer.cs">
+      <DependentUpon>frm_statusUpdateEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Events\Event.cs" />
-    <Compile Include="EventReader.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Events\EventReader.cs" />
     <Compile Include="Events\TrackLogEvent.cs" />
     <Compile Include="Events\VideoEvent.cs" />
-    <Compile Include="EventForms\frm_add.cs">
+    <Compile Include="Forms\frm_add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_add.Designer.cs">
+    <Compile Include="Forms\frm_add.Designer.cs">
       <DependentUpon>frm_add.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_main.cs">
+    <Compile Include="Forms\frm_main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_main.Designer.cs">
+    <Compile Include="Forms\frm_main.Designer.cs">
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
     <Compile Include="Events\PhotoEvent.cs" />
@@ -96,20 +128,32 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\StatusUpdateEvent.cs" />
     <Compile Include="Events\TweetEvent.cs" />
-    <EmbeddedResource Include="EventForms\frm_add.resx">
+    <EmbeddedResource Include="EventForms\frm_trackLogEvent.resx">
+      <DependentUpon>frm_trackLogEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForms\frm_tweetEvent.resx">
+      <DependentUpon>frm_tweetEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForms\frm_videoEvent.resx">
+      <DependentUpon>frm_videoEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_add.resx">
       <DependentUpon>frm_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventForms\frm_address.resx">
       <DependentUpon>frm_address.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_mapDisplay.resx">
+    <EmbeddedResource Include="Forms\frm_mapDisplay.resx">
       <DependentUpon>frm_mapDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventForms\frm_photoEvent.resx">
       <DependentUpon>frm_photoEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_main.resx">
+    <EmbeddedResource Include="Forms\frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForms\frm_statusUpdateEvent.resx">
+      <DependentUpon>frm_statusUpdateEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +164,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

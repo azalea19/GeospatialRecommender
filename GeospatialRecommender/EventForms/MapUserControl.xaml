@@ -11,7 +11,8 @@
                ZoomLevel="1"
                MouseDoubleClick="OnMapDoubleClick"   
                MouseWheel="OnMouseWheelMove"
-               MouseEnter="OnMouseEnter" />
-                                                     
+               MouseEnter="OnMouseEnter" 
+               CredentialsProvider="AqXJFUzQQmH8NRmKObTCFXN_F0_0998xlZOdMhxr1rQWVUh9FcJ--LgR3Ns-0T6l" />
+               
     </Grid>
 </UserControl>
