@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv = "http://www.w3.org/2001/12/soap-envelope" soapenv:encodingStyle = "http://www.w3.org/2001/12/soap-encoding">
+<lle:soapenv xmlns:lle="http://www.xyz.org/lifelogevents">
+  <lle:Event>
+    <eventid>ID1</eventid>
+    <lle:tweet>
+      <lle:text>This is some tweet in my day</lle:text>
+      <lle:location>
+        <lle:lat>55</lle:lat>
+        <lle:long>55</lle:long>
+      </lle:location>
+      <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+    </lle:tweet>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID2</eventid>
+    <lle:facebook-status-update>
+      <lle:text>This is some status update in my day</lle:text>
+      <lle:location>
+        <lle:lat>12</lle:lat>
+        <lle:long>12</lle:long>
+      </lle:location>
+      <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID0</eventid>
+    <lle:photo>
+      <lle:filepath>/photos/image.jpg</lle:filepath>
+      <lle:location>
+        <lle:lat>12</lle:lat>
+        <lle:long>12</lle:long>
+      </lle:location>
+      <lle:datetimestamp>
+        <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+      </lle:datetimestamp>
+    </lle:photo>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID3</eventid>
+    <lle:facebook-status-update>
+      <lle:text>hi</lle:text>
+      <lle:location>
+        <lle:lat>50.9584267233599</lle:lat>
+        <lle:long>50.9584267233599</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 9:34:04 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID7</eventid>
+    <lle:facebook-status-update>
+      <lle:text>hi</lle:text>
+      <lle:location>
+        <lle:lat>38.5481654230466</lle:lat>
+        <lle:long>38.5481654230466</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 9:44:19 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID9</eventid>
+    <lle:facebook-status-update>
+      <lle:text>yolo</lle:text>
+      <lle:location>
+        <lle:lat>45.8287992519213</lle:lat>
+        <lle:long>45.8287992519213</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 9:47:56 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID10</eventid>
+    <lle:facebook-status-update>
+      <lle:text>hiya</lle:text>
+      <lle:location>
+        <lle:lat>13.5819209005458</lle:lat>
+        <lle:long>13.5819209005458</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 9:54:25 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID11</eventid>
+    <lle:facebook-status-update>
+      <lle:text>shakaka</lle:text>
+      <lle:location>
+        <lle:lat>-27.9944014110462</lle:lat>
+        <lle:long>-27.9944014110462</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 10:35:03 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID15</eventid>
+    <lle:facebook-status-update>
+      <lle:text>lol</lle:text>
+      <lle:location>
+        <lle:lat>-26.1159859253335</lle:lat>
+        <lle:long>-26.1159859253335</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 10:38:12 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID16</eventid>
+    <lle:tweet>
+      <lle:text>hey</lle:text>
+      <lle:location>
+        <lle:lat>45.3367019099681</lle:lat>
+        <lle:long>115.3125</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 10:44:03 PM</lle:datetimestamp>
+    </lle:tweet>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID17</eventid>
+    <lle:photo>
+      <lle:filepath>1/1/0001 12:00:00 AM</lle:filepath>
+      <lle:location>
+        <lle:lat>-53.1204052831066</lle:lat>
+        <lle:long>12.65625</lle:long>
+      </lle:location>
+      <lle:datetimestamp>
+        <lle:datetimestamp>Jellyfish.jpg</lle:datetimestamp>
+      </lle:datetimestamp>
+    </lle:photo>
+  </lle:Event>
+  <lle:Event>
+    <eventid>ID18</eventid>
+    <lle:tweet>
+      <lle:text>yolo</lle:text>
+      <lle:location>
+        <lle:lat>-22.268764039074</lle:lat>
+        <lle:long>134.296875</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 11:14:40 PM</lle:datetimestamp>
+    </lle:tweet>
+  </lle:Event>
+</lle:soapenv></soapenv:Envelope>

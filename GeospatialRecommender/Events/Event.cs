@@ -20,6 +20,12 @@ namespace GeospatialRecommender
             this.eventLocation = location;
         }
 
+        public string GetDT()
+        {
+            return dateTimeStamp;
+        }
+        
+
         //Protected members
         protected Event(GRLocation location, string dateTimeStamp, string eventType)
         {

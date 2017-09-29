@@ -11,23 +11,48 @@ namespace GeospatialRecommender.Events
 {
     class GREventManager
     {
+        public static void ClearMap()
+        {
+            eventMap.Clear();
+        }
+
         public static void LoadEvents(string logFileName)
         {
-            List<Event> events = EventReader.GetEvents(filePathPrefix + logFileName);
-            for(int i=0; i < events.Count; i++)
-            {
-                if(events[i].ID > maxEventID)
+            eventMap.Clear();
+            maxEventID = 0;
+            List<Event> events = EventReader.GetEvents(logFileName);       
+            
+            for (int i=0; i < events.Count; i++)
+            { 
+                bool unique = true;
+                foreach (KeyValuePair<int,Event> pair in eventMap)
                 {
-                    maxEventID = events[i].ID;
+                    if(events[i].ID == pair.Value.ID)
+                    {
+                        //Duplicate ID found create new ID                                            
+                        unique = false;
+                        break;
+                    }
                 }
+
+                if(unique)
+                {             
+                    maxEventID = events[i].ID > maxEventID ? events[i].ID : maxEventID;
+                }
+                else
+                {
+                    events[i].ID = ++maxEventID;
+                }
+
                 eventMap.Add(events[i].ID, events[i]);
             }
         }
          
         public static void AddEvent(Event eventItem)
         {
-            maxEventID++;
-            eventMap.Add(maxEventID, eventItem);
+            ++maxEventID;
+            eventItem.ID = maxEventID;
+            eventMap.Add(eventItem.ID, eventItem);
         }
 
         public static Event GetEvent(int ID, Event e)

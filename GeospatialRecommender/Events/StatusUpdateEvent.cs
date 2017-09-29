@@ -19,6 +19,15 @@ namespace GeospatialRecommender
             this.statusText = text;
         }
 
+        public string StatusText
+        {
+            get
+            {
+                return statusText;
+            }
+        }
+
         private string statusText;
+
     }
 }

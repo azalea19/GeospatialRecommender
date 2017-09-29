@@ -38,6 +38,7 @@ namespace GeospatialRecommender
             InitializeComponent();
             addEventForm = new frm_add();
             selection = 0;
+            instance = this;
         }
 
         private void OnMapDoubleClick(object sender, MouseButtonEventArgs e)
@@ -64,12 +65,17 @@ namespace GeospatialRecommender
             Map.Focus();
         }
 
-        public void DisplayEvents(int selection)
+        public static void ClearEventDisplay()
         {
-            this.selection = selection;
+            instance.Map.Children.Clear();
+        }
+
+        public static void DisplayEvents(int selection)
+        {
+            instance.selection = selection;
             EventType eventsToShow = (EventType)selection;
             Dictionary<int, Event> map = GREventManager.GetEventMap();
-            Map.Children.Clear();
+            instance.Map.Children.Clear();
 
             if(eventsToShow == EventType.ALL)
             {
@@ -78,7 +84,7 @@ namespace GeospatialRecommender
                     Pushpin pin = new Pushpin();
                     pin.Location =  new Location(pair.Value.GetLocation().Latitude, pair.Value.GetLocation().Longitude);
                     //Adds the pushpin to the map.
-                    Map.Children.Add(pin);
+                    instance.Map.Children.Add(pin);
                 }
             }
             else
@@ -91,7 +97,7 @@ namespace GeospatialRecommender
                         Pushpin pin = new Pushpin();
                         pin.Location = new Location(pair.Value.GetLocation().Latitude,pair.Value.GetLocation().Longitude);
                         //Adds the pushpin to the map.
-                        Map.Children.Add(pin);
+                        instance.Map.Children.Add(pin);
                     }
                 }
             }                                 
@@ -120,5 +126,7 @@ namespace GeospatialRecommender
 
         private frm_add addEventForm;
         private int selection;
+
+        private static MapUserControl instance;
     }
 }

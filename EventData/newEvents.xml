@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv = "http://www.w3.org/2001/12/soap-envelope" soapenv:encodingStyle = "http://www.w3.org/2001/12/soap-encoding">
+<lle:soapenv xmlns:lle="http://www.xyz.org/lifelogevents">
+  <lle:Event>
+    <eventid>ID2</eventid>
+    <lle:facebook-status-update>
+      <lle:text>first event</lle:text>
+      <lle:location>
+        <lle:lat>51.8357775204525</lle:lat>
+        <lle:long>86.484375</lle:long>
+      </lle:location>
+      <lle:datetimestamp>9/29/2017 11:39:25 PM</lle:datetimestamp>
+    </lle:facebook-status-update>
+  </lle:Event>
+</lle:soapenv></soapenv:Envelope>

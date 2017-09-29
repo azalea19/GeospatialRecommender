@@ -85,6 +85,13 @@
     <Compile Include="Forms\EventForms\frm_videoEvent.Designer.cs">
       <DependentUpon>frm_videoEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm_createNewLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_createNewLog.Designer.cs">
+      <DependentUpon>frm_createNewLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\EventWriter.cs" />
     <Compile Include="Utility\Geocoder.cs" />
     <Compile Include="Forms\frm_mapDisplay.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventForms\frm_address.resx">
       <DependentUpon>frm_address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_createNewLog.resx">
+      <DependentUpon>frm_createNewLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_mapDisplay.resx">
       <DependentUpon>frm_mapDisplay.cs</DependentUpon>

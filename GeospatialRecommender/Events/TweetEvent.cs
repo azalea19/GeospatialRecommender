@@ -19,14 +19,16 @@ namespace GeospatialRecommender
             this.tweetText = tweetText;
         }
 
-        public string GetTweetText()
+        public string TweetText
         {
-            return tweetText;
-        }
-
-        public void SetTweetText(string text)
-        {
-            this.tweetText = text;
+            get
+            {
+                return tweetText;
+            }
+            set
+            {
+                tweetText = value;
+            }
         }
 
         private string tweetText;

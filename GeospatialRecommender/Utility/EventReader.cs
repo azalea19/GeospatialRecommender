@@ -130,10 +130,8 @@ namespace GeospatialRecommender
             XmlNode latNode = GetNodeWithTag("lat", locationNode, nsmgr);
             XmlNode longNode = GetNodeWithTag("long", locationNode, nsmgr);
 
-            GRLocation location = new GRLocation();
-            location.Latitude = Convert.ToInt32(latNode.InnerText);
-            location.Longitude = Convert.ToInt32(latNode.InnerText);
-
+            GRLocation location = new GRLocation(Convert.ToDouble(latNode.InnerText), Convert.ToDouble(longNode.InnerText));
+     
             return location;
         }
 

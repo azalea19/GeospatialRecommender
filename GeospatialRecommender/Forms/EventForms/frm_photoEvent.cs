@@ -30,9 +30,11 @@ namespace GeospatialRecommender.EventForms
             {
                 string filePath = fd.FileName;
                 fileName = Path.GetFileName(fd.FileName);
-                pb_preview.Image = new Bitmap(fd.FileName);
-                System.IO.File.Copy(fd.FileName, GREventManager.GetDataPath() + fileName,true);
-                
+                pb_preview.Image = new Bitmap(new Bitmap(fd.FileName));
+                if(fd.FileName != Path.GetFullPath(GREventManager.GetDataPath() + fileName))
+                {
+                    System.IO.File.Copy(fd.FileName, GREventManager.GetDataPath() + fileName, true);
+                }
             }
         }
 

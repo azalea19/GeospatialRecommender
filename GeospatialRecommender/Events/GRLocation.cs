@@ -8,11 +8,6 @@ namespace GeospatialRecommender.Events
 {
     public class GRLocation
     {
-        public GRLocation()
-        {
-
-        }
-
         public GRLocation(double lat, double longt)
         {
             latitude = lat;

@@ -24,3 +24,4 @@ C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\Bi
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_trackLogEvent.resources
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\Forms\EventForms\MapUserControl.baml
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\Forms\EventForms\MapUserControl.g.cs
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.Forms.frm_createNewLog.resources
