@@ -12,7 +12,7 @@ namespace GeospatialRecommender.Events
 {
     static class Geocoder
     {    
-        //addressQuery example: "13 Landers Road, Lesmurdie, WA"
+        //addressQuery example: "13 Landers Road, Lesmurdie, WA, 6076"
         public static Location GeoCode(string addressQuery)
         {
             bool done = false;

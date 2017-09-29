@@ -9,11 +9,25 @@ using System.Windows;
 
 namespace GeospatialRecommender.Events
 {
-    class EventManager
+    class GREventManager
     {
+        public static void LoadEvents(string logFileName)
+        {
+            List<Event> events = EventReader.GetEvents(filePathPrefix + logFileName);
+            for(int i=0; i < events.Count; i++)
+            {
+                if(events[i].ID > maxEventID)
+                {
+                    maxEventID = events[i].ID;
+                }
+                eventMap.Add(events[i].ID, events[i]);
+            }
+        }
+         
         public static void AddEvent(Event eventItem)
         {
-            eventMap.Add(eventItem.ID, eventItem);
+            maxEventID++;
+            eventMap.Add(maxEventID, eventItem);
         }
 
         public static Event GetEvent(int ID, Event e)
@@ -31,9 +45,14 @@ namespace GeospatialRecommender.Events
         {
             return filePathPrefix;
         }
-        
-                
+              
+        public static Dictionary<int,Event> GetEventMap()
+        {
+            return eventMap;
+        }
+               
+        private static int maxEventID = 0;
         private static Dictionary<int, Event> eventMap = eventMap = new Dictionary<int, Event>();
-        private static string filePathPrefix = "../../../../DataFiles/";
+        private static string filePathPrefix = "../../../EventData/";
     }
 }

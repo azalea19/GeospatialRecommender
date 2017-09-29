@@ -1,4 +1,5 @@
-﻿using Microsoft.Maps.MapControl.WPF;
+﻿using GeospatialRecommender.Events;
+using Microsoft.Maps.MapControl.WPF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,22 @@ namespace GeospatialRecommender
     /// </summary>
     public partial class MapUserControl : UserControl
     {
+        private enum EventType
+        {
+            NONE,
+            TWEET,
+            STATUS,
+            PHOTO,
+            VIDEO,
+            TRACKLOG,
+            ALL
+        }
+
         public MapUserControl()
         {
             InitializeComponent();
             addEventForm = new frm_add();
+            selection = 0;
         }
 
         private void OnMapDoubleClick(object sender, MouseButtonEventArgs e)
@@ -41,11 +54,9 @@ namespace GeospatialRecommender
             //The pushpin to add to the map.
             Pushpin pin = new Pushpin();
             pin.Location = pinLocation;
-
-            //Adds the pushpin to the map.
-            Map.Children.Add(pin);
-           
+                     
             addEventForm.ShowForm(pinLocation);
+            DisplayEvents(selection);
         }
 
         private void OnMouseEnter(object sender, EventArgs e)
@@ -53,9 +64,37 @@ namespace GeospatialRecommender
             Map.Focus();
         }
 
-        private void DisplayEvents(object sender, EventArgs e)
+        public void DisplayEvents(int selection)
         {
-           
+            this.selection = selection;
+            EventType eventsToShow = (EventType)selection;
+            Dictionary<int, Event> map = GREventManager.GetEventMap();
+            Map.Children.Clear();
+
+            if(eventsToShow == EventType.ALL)
+            {
+                foreach (KeyValuePair<int, Event> pair in map)
+                {
+                    Pushpin pin = new Pushpin();
+                    pin.Location =  new Location(pair.Value.GetLocation().Latitude, pair.Value.GetLocation().Longitude);
+                    //Adds the pushpin to the map.
+                    Map.Children.Add(pin);
+                }
+            }
+            else
+            {
+                foreach(KeyValuePair<int,Event> pair in map)
+                {
+                    if(pair.Value.eventType == eventsToShow.ToString())
+                    {
+                        //The pushpin to add to the map.
+                        Pushpin pin = new Pushpin();
+                        pin.Location = new Location(pair.Value.GetLocation().Latitude,pair.Value.GetLocation().Longitude);
+                        //Adds the pushpin to the map.
+                        Map.Children.Add(pin);
+                    }
+                }
+            }                                 
         }
 
         private void OnMouseWheelMove(object sender, MouseWheelEventArgs e)
@@ -80,5 +119,6 @@ namespace GeospatialRecommender
         }
 
         private frm_add addEventForm;
+        private int selection;
     }
 }

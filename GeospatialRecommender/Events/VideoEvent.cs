@@ -8,7 +8,14 @@ namespace GeospatialRecommender.Events
 {
     public class VideoEvent : Event
     {
-        public VideoEvent(GRLocation location, string videoFilePath, string startTimeStamp, string endTimeStamp) : base(location, startTimeStamp)
+        public VideoEvent(GRLocation location, string videoFilePath, string startTimeStamp, string endTimeStamp) : base(location, startTimeStamp, "VIDEO")
+        {
+            this.videoFilePath = videoFilePath;
+            this.startTimeStamp = startTimeStamp;
+            this.endTimeStamp = endTimeStamp;
+        }
+
+        public VideoEvent(GRLocation location, string videoFilePath, string startTimeStamp, string endTimeStamp, int ID) : base(location, startTimeStamp, ID, "VIDEO")
         {
             this.videoFilePath = videoFilePath;
             this.startTimeStamp = startTimeStamp;

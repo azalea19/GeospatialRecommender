@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeospatialRecommender.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,6 @@ using System.Threading.Tasks;
 
 namespace GeospatialRecommender
 {
-    public struct GRLocation
-    {
-        public float latitude;
-        public float longitude;
-    }
-
     public abstract class Event
     {
         //Public members
@@ -26,16 +21,26 @@ namespace GeospatialRecommender
         }
 
         //Protected members
-        protected Event(GRLocation location, string dateTimeStamp)
+        protected Event(GRLocation location, string dateTimeStamp, string eventType)
         {
             this.eventLocation = location;
             this.dateTimeStamp = dateTimeStamp;
-            ID = 0;
+            this.ID = 0;
+            this.eventType = eventType;
+        }
+
+        protected Event(GRLocation location, string dateTimeStamp, int ID, string eventType)
+        {
+            this.eventLocation = location;
+            this.dateTimeStamp = dateTimeStamp;
+            this.ID = ID;
+            this.eventType = eventType;
         }
 
         //Private members
         private GRLocation eventLocation;
         private string dateTimeStamp;
         public int ID;
+        public string eventType;
     }
 }

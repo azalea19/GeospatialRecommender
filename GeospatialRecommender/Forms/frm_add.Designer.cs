@@ -133,6 +133,7 @@
             this.Controls.Add(this.btn_addPhoto);
             this.Name = "frm_add";
             this.Text = "Add Event";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_add_FormClosing);
             this.Load += new System.EventHandler(this.frm_add_Load);
             this.ResumeLayout(false);
 

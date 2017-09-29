@@ -60,52 +60,53 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventForms\frm_address.cs">
+    <Compile Include="Events\GRLocation.cs" />
+    <Compile Include="Forms\EventForms\frm_address.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_address.Designer.cs">
+    <Compile Include="Forms\EventForms\frm_address.Designer.cs">
       <DependentUpon>frm_address.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_trackLogEvent.cs">
+    <Compile Include="Forms\EventForms\frm_trackLogEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_trackLogEvent.Designer.cs">
+    <Compile Include="Forms\EventForms\frm_trackLogEvent.Designer.cs">
       <DependentUpon>frm_trackLogEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_tweetEvent.cs">
+    <Compile Include="Forms\EventForms\frm_tweetEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_tweetEvent.Designer.cs">
+    <Compile Include="Forms\EventForms\frm_tweetEvent.Designer.cs">
       <DependentUpon>frm_tweetEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_videoEvent.cs">
+    <Compile Include="Forms\EventForms\frm_videoEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_videoEvent.Designer.cs">
+    <Compile Include="Forms\EventForms\frm_videoEvent.Designer.cs">
       <DependentUpon>frm_videoEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events\Geocoder.cs" />
+    <Compile Include="Utility\Geocoder.cs" />
     <Compile Include="Forms\frm_mapDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frm_mapDisplay.Designer.cs">
       <DependentUpon>frm_mapDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_photoEvent.cs">
+    <Compile Include="Forms\EventForms\frm_photoEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_photoEvent.Designer.cs">
+    <Compile Include="Forms\EventForms\frm_photoEvent.Designer.cs">
       <DependentUpon>frm_photoEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForms\frm_statusUpdateEvent.cs">
+    <Compile Include="Forms\EventForms\frm_statusUpdateEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForms\frm_statusUpdateEvent.Designer.cs">
+    <Compile Include="Forms\EventForms\frm_statusUpdateEvent.Designer.cs">
       <DependentUpon>frm_statusUpdateEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Events\Event.cs" />
-    <Compile Include="Events\EventManager.cs" />
-    <Compile Include="Events\EventReader.cs" />
+    <Compile Include="Utility\GREventManager.cs" />
+    <Compile Include="Utility\EventReader.cs" />
     <Compile Include="Events\TrackLogEvent.cs" />
     <Compile Include="Events\VideoEvent.cs" />
     <Compile Include="Forms\frm_add.cs">
@@ -121,38 +122,38 @@
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
     <Compile Include="Events\PhotoEvent.cs" />
-    <Compile Include="EventForms\MapUserControl.xaml.cs">
+    <Compile Include="Forms\EventForms\MapUserControl.xaml.cs">
       <DependentUpon>MapUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\StatusUpdateEvent.cs" />
     <Compile Include="Events\TweetEvent.cs" />
-    <EmbeddedResource Include="EventForms\frm_trackLogEvent.resx">
+    <EmbeddedResource Include="Forms\EventForms\frm_trackLogEvent.resx">
       <DependentUpon>frm_trackLogEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_tweetEvent.resx">
+    <EmbeddedResource Include="Forms\EventForms\frm_tweetEvent.resx">
       <DependentUpon>frm_tweetEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_videoEvent.resx">
+    <EmbeddedResource Include="Forms\EventForms\frm_videoEvent.resx">
       <DependentUpon>frm_videoEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_add.resx">
       <DependentUpon>frm_add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_address.resx">
+    <EmbeddedResource Include="Forms\EventForms\frm_address.resx">
       <DependentUpon>frm_address.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_mapDisplay.resx">
       <DependentUpon>frm_mapDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_photoEvent.resx">
+    <EmbeddedResource Include="Forms\EventForms\frm_photoEvent.resx">
       <DependentUpon>frm_photoEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForms\frm_statusUpdateEvent.resx">
+    <EmbeddedResource Include="Forms\EventForms\frm_statusUpdateEvent.resx">
       <DependentUpon>frm_statusUpdateEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -179,7 +180,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="EventForms\MapUserControl.xaml">
+    <Page Include="Forms\EventForms\MapUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

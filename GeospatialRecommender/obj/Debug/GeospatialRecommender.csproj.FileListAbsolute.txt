@@ -11,8 +11,6 @@ C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\Ge
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.frm_main.resources
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_address.resources
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender_MarkupCompile.cache
-C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\EventForms\MapUserControl.g.cs
-C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\EventForms\MapUserControl.baml
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.g.resources
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_mapDisplay.resources
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
@@ -24,3 +22,5 @@ C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\Bi
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\BingMapsRESTToolkit.pdb
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\bin\Debug\BingMapsRESTToolkit.xml
 C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\GeospatialRecommender.EventForms.frm_trackLogEvent.resources
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\Forms\EventForms\MapUserControl.baml
+C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\Forms\EventForms\MapUserControl.g.cs

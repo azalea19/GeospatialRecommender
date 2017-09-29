@@ -57,35 +57,46 @@ namespace GeospatialRecommender
             return null;
         }
 
-        private static TweetEvent ProcessTweet(XmlNode tweetNode, XmlNamespaceManager nsmgr)
+        private static TweetEvent ProcessTweet(XmlNode eventNode, XmlNode tweetNode, XmlNamespaceManager nsmgr)
         {
+            XmlNode idNode = GetNodeWithTag("eventid", eventNode, nsmgr);
             XmlNode dateTimeNode = GetNodeWithTag("datetimestamp", tweetNode, nsmgr);
             XmlNode tweetTextNode = GetNodeWithTag("text", tweetNode, nsmgr);
             GRLocation location = GetLocationFromNode(tweetNode, nsmgr);
-            return new TweetEvent(location, dateTimeNode.InnerText, tweetTextNode.InnerText);
+
+            string stringID = idNode.InnerText.Substring(2);
+            int ID = Convert.ToInt32(stringID);
+            return new TweetEvent(location, dateTimeNode.InnerText, tweetTextNode.InnerText, ID);
         }
 
-        private static PhotoEvent ProcessPhotoEvent(XmlNode photoEventNode, XmlNamespaceManager nsmgr)
+        private static PhotoEvent ProcessPhotoEvent(XmlNode eventNode, XmlNode photoEventNode, XmlNamespaceManager nsmgr)
         {
+            XmlNode idNode = GetNodeWithTag("eventid", eventNode, nsmgr);
             XmlNode dateTimeNode = GetNodeWithTag("datetimestamp", photoEventNode, nsmgr);
             XmlNode photoNode = GetNodeWithTag("photo", photoEventNode, nsmgr);
             XmlNode filepathNode = GetNodeWithTag("filepath", photoEventNode, nsmgr);
             GRLocation location = GetLocationFromNode(photoEventNode, nsmgr);
 
-            return new PhotoEvent(location, dateTimeNode.InnerText, filepathNode.InnerText);
+            string stringID = idNode.InnerText.Substring(2);
+            int ID = Convert.ToInt32(stringID);
+            return new PhotoEvent(location, dateTimeNode.InnerText, filepathNode.InnerText, ID);
         }
 
-        private static StatusUpdateEvent ProcessStatusEvent(XmlNode statusNode, XmlNamespaceManager nsmgr)
+        private static StatusUpdateEvent ProcessStatusEvent(XmlNode eventNode, XmlNode statusNode, XmlNamespaceManager nsmgr)
         {
+            XmlNode idNode = GetNodeWithTag("eventid", eventNode, nsmgr);
             XmlNode dateTimeNode = GetNodeWithTag("datetimestamp", statusNode, nsmgr);
             XmlNode statusTextNode = GetNodeWithTag("text", statusNode, nsmgr);
 
+            string stringID = idNode.InnerText.Substring(2);
+            int ID = Convert.ToInt32(stringID);
             GRLocation location = GetLocationFromNode(statusNode, nsmgr);
-            return new StatusUpdateEvent(location, dateTimeNode.InnerText, statusTextNode.InnerText);
+            return new StatusUpdateEvent(location, dateTimeNode.InnerText, statusTextNode.InnerText, ID);
         }
 
-        private static VideoEvent ProcessVideoEvent(XmlNode videoEventNode, XmlNamespaceManager nsmgr)
+        private static VideoEvent ProcessVideoEvent(XmlNode eventNode, XmlNode videoEventNode, XmlNamespaceManager nsmgr)
         {
+            XmlNode idNode = GetNodeWithTag("eventid", eventNode, nsmgr);
             XmlNode startTimeNode = GetNodeWithTag("start-time", videoEventNode, nsmgr);
             XmlNode endTimeNode = GetNodeWithTag("end-time", videoEventNode, nsmgr);
             XmlNode dtStartNode = GetNodeWithTag("datetimestamp", startTimeNode, nsmgr);
@@ -93,11 +104,14 @@ namespace GeospatialRecommender
             XmlNode filepathNode = GetNodeWithTag("filepath", videoEventNode, nsmgr);
             GRLocation location = GetLocationFromNode(videoEventNode, nsmgr);
 
-            return new VideoEvent(location, filepathNode.InnerText, dtStartNode.InnerText, dtEndNode.InnerText);
+            string stringID = idNode.InnerText.Substring(2);
+            int ID = Convert.ToInt32(stringID);
+            return new VideoEvent(location, filepathNode.InnerText, dtStartNode.InnerText, dtEndNode.InnerText, ID);
         }
 
-        private static TrackLogEvent ProcessTrackLog(XmlNode trackEventNode, XmlNamespaceManager nsmgr)
+        private static TrackLogEvent ProcessTrackLog(XmlNode eventNode, XmlNode trackEventNode, XmlNamespaceManager nsmgr)
         {
+            XmlNode idNode = GetNodeWithTag("eventid", eventNode, nsmgr);
             XmlNode startTimeNode = GetNodeWithTag("start-time", trackEventNode, nsmgr);
             XmlNode endTimeNode = GetNodeWithTag("end-time", trackEventNode, nsmgr);
             XmlNode dtStartNode = GetNodeWithTag("datetimestamp", startTimeNode, nsmgr);
@@ -105,8 +119,9 @@ namespace GeospatialRecommender
             XmlNode filepathNode = GetNodeWithTag("filepath", trackEventNode, nsmgr);
             GRLocation location = GetLocationFromNode(trackEventNode, nsmgr);
 
-            return new TrackLogEvent(location, filepathNode.InnerText, dtStartNode.InnerText, dtEndNode.InnerText);
-
+            string stringID = idNode.InnerText.Substring(2);
+            int ID = Convert.ToInt32(stringID);
+            return new TrackLogEvent(location, filepathNode.InnerText, dtStartNode.InnerText, dtEndNode.InnerText,ID);
         }
 
         private static GRLocation GetLocationFromNode(XmlNode parent, XmlNamespaceManager nsmgr)
@@ -116,8 +131,8 @@ namespace GeospatialRecommender
             XmlNode longNode = GetNodeWithTag("long", locationNode, nsmgr);
 
             GRLocation location = new GRLocation();
-            location.latitude = Convert.ToInt32(latNode.InnerText);
-            location.longitude = Convert.ToInt32(latNode.InnerText);
+            location.Latitude = Convert.ToInt32(latNode.InnerText);
+            location.Longitude = Convert.ToInt32(latNode.InnerText);
 
             return location;
         }
@@ -132,39 +147,48 @@ namespace GeospatialRecommender
                 XmlNode tweetEventNode = GetNodeWithTag("tweet", eventNodes[i], nsmgr);
                 if (tweetEventNode != null)
                 {
-                    TweetEvent tEvent = ProcessTweet(tweetEventNode, nsmgr);
+                    TweetEvent tEvent = ProcessTweet(eventNodes[i],tweetEventNode, nsmgr);                  
                     eventLog.Add(tEvent);
                 }
 
                 XmlNode statusEventNode = GetNodeWithTag("facebook-status-update", eventNodes[i], nsmgr);
                 if (statusEventNode != null)
                 {
-                    StatusUpdateEvent suEvent = ProcessStatusEvent(statusEventNode, nsmgr);
+                    StatusUpdateEvent suEvent = ProcessStatusEvent(eventNodes[i],statusEventNode, nsmgr);
                     eventLog.Add(suEvent);
                 }
 
                 XmlNode photoEventNode = GetNodeWithTag("photo", eventNodes[i], nsmgr);
                 if (photoEventNode != null)
                 {
-                    PhotoEvent pEvent = ProcessPhotoEvent(photoEventNode, nsmgr);
+                    PhotoEvent pEvent = ProcessPhotoEvent(eventNodes[i],photoEventNode, nsmgr);
                     eventLog.Add(pEvent);
                 }
 
                 XmlNode videoEventNode = GetNodeWithTag("video", eventNodes[i], nsmgr);
                 if (videoEventNode != null)
                 {
-                    VideoEvent vEvent = ProcessVideoEvent(videoEventNode, nsmgr);
+                    VideoEvent vEvent = ProcessVideoEvent(eventNodes[i],videoEventNode, nsmgr);
                     eventLog.Add(vEvent);
                 }
 
                 XmlNode trackLogEventNode = GetNodeWithTag("tracklog", eventNodes[i], nsmgr);
                 if (trackLogEventNode != null)
                 {
-                    TrackLogEvent tlEvent = ProcessTrackLog(trackLogEventNode, nsmgr);
+                    TrackLogEvent tlEvent = ProcessTrackLog(eventNodes[i],trackLogEventNode, nsmgr);
                     eventLog.Add(tlEvent);
                 }
             }
             return eventLog;
         }
+
+        private static void CheckMaxID(Event e)
+        {
+            if(e.ID > maxID)
+            {
+                maxID = e.ID;
+            }
+        }
+        private static int maxID = 0;
     }
 }

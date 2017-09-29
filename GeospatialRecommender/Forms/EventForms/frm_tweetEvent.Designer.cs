@@ -92,6 +92,7 @@
             this.Controls.Add(this.dtPicker);
             this.Name = "frm_tweetEvent";
             this.Text = "Add Tweet Event";
+            this.Load += new System.EventHandler(this.frm_tweetEvent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

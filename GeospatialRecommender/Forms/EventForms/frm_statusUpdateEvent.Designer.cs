@@ -41,6 +41,7 @@
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.Size = new System.Drawing.Size(260, 20);
             this.dtPicker.TabIndex = 0;
+            this.dtPicker.ValueChanged += new System.EventHandler(this.dtPicker_ValueChanged);
             // 
             // label1
             // 

@@ -19,7 +19,6 @@ namespace GeospatialRecommender
         {
             InitializeComponent();
             photoEventForm = new frm_photoEvent();
-            newEvent = null;
             videoEventForm = new frm_videoEvent();
             statusUpdateForm = new frm_statusUpdateEvent();
             tweetEventForm = new frm_tweetEvent();
@@ -35,8 +34,8 @@ namespace GeospatialRecommender
 
         private void btn_addPhoto_Click(object sender, EventArgs e)
         {
-            photoEventForm.ShowForm();
-            
+            photoEventForm.ShowForm(eventLocation);
+            this.Hide();       
         }
 
         private void frm_add_Load(object sender, EventArgs e)
@@ -46,17 +45,20 @@ namespace GeospatialRecommender
 
         private void btn_addStatus_Click(object sender, EventArgs e)
         {
-            statusUpdateForm.ShowForm();
+            statusUpdateForm.ShowForm(eventLocation);
+            this.Hide();         
         }
 
         private void btn_addVideo_Click(object sender, EventArgs e)
         {
-            videoEventForm.ShowDialog();
+            videoEventForm.ShowForm(eventLocation);
+            this.Hide();
         }
 
         private void btn_addTweet_Click(object sender, EventArgs e)
         {
-            tweetEventForm.ShowForm();
+            tweetEventForm.ShowForm(eventLocation);
+            this.Hide();
         }
 
         private void btn_help_Click(object sender, EventArgs e)
@@ -65,7 +67,8 @@ namespace GeospatialRecommender
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
-        {
+        {       
+            this.Hide();
         }     
 
         private void btn_addlog_Click(object sender, EventArgs e)
@@ -82,13 +85,18 @@ namespace GeospatialRecommender
             }            
         }
 
+        private void frm_add_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+        }
+
         private frm_photoEvent photoEventForm;       
         private frm_videoEvent videoEventForm;
         private frm_statusUpdateEvent statusUpdateForm;
         private frm_tweetEvent tweetEventForm;
         private frm_address addressForm;
 
-        private Event newEvent;
-        private Location eventLocation;  
+        private Location eventLocation;
+       
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtPicker = new System.Windows.Forms.DateTimePicker();
             this.btn_upload = new System.Windows.Forms.Button();
             this.btn_submit = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
@@ -36,12 +36,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtPicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 266);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(320, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtPicker.Location = new System.Drawing.Point(12, 266);
+            this.dtPicker.Name = "dtPicker";
+            this.dtPicker.Size = new System.Drawing.Size(320, 20);
+            this.dtPicker.TabIndex = 0;
+            this.dtPicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btn_upload
             // 
@@ -61,6 +62,7 @@
             this.btn_submit.TabIndex = 4;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // btn_cancel
             // 
@@ -70,6 +72,7 @@
             this.btn_cancel.TabIndex = 5;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // pb_preview
             // 
@@ -92,9 +95,10 @@
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.btn_upload);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtPicker);
             this.Name = "frm_videoEvent";
             this.Text = "Add Video Event";
+            this.Load += new System.EventHandler(this.frm_videoEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).EndInit();
             this.ResumeLayout(false);
 
@@ -102,7 +106,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtPicker;
         private System.Windows.Forms.Button btn_upload;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_cancel;
