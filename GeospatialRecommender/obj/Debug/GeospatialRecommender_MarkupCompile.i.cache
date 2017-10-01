@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\Users\Maddie\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommender\obj\Debug\
 GeospatialRecommender
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 1-308278783
 
-40-1050922855
-72-430525977
+401172350463
+72-381414426
 Forms\EventForms\MapUserControl.xaml;
 
 False

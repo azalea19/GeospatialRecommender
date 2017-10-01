@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{20D9E2CA-8061-499C-85A8-FBA1A4B4EA79}</ProjectGuid>
+    <ProjectGuid>{4AB9D9BA-A3CB-4F93-AE7D-0A0DC3DC1B0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GeospatialRecommenderTests</RootNamespace>
@@ -51,8 +51,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Events\EventTests.cs" />
+    <Compile Include="Events\GRLocationTests.cs" />
+    <Compile Include="Events\PhotoEventTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeospatialRecommender\GeospatialRecommender.csproj">
+      <Project>{F4249800-D8A8-4C25-A2E4-D50981EE424F}</Project>
+      <Name>GeospatialRecommender</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
