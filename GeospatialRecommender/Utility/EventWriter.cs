@@ -111,7 +111,6 @@ namespace GeospatialRecommender.Utility
             Write(ns, writer, aEvent.GetLocation());
             Write(ns, writer, aEvent.GetDT());
 
-            
             writer.WriteEndElement();
         }
 
@@ -131,7 +130,7 @@ namespace GeospatialRecommender.Utility
 
         public static void Write(string ns, XmlTextWriter writer, TrackLogEvent aEvent)
         {
-
+            
         }
 
         private static void Write(string ns, XmlTextWriter writer, GRLocation location)

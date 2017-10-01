@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace GeospatialRecommender.Events
 {
-    class GREventManager
+    public class GREventManager
     {
         public static void ClearMap()
         {
