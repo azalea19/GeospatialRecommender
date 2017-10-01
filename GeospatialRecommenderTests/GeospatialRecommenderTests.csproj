@@ -54,6 +54,8 @@
     <Compile Include="Events\EventTests.cs" />
     <Compile Include="Events\GRLocationTests.cs" />
     <Compile Include="Events\PhotoEventTests.cs" />
+    <Compile Include="Events\StatusUpdateEventTests.cs" />
+    <Compile Include="Events\TrackLogEventTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

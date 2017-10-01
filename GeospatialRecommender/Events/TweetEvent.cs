@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GeospatialRecommender
 {
-    class TweetEvent : Event
+    public class TweetEvent : Event
     {
         public TweetEvent(GRLocation location, string dateTimeStamp, string tweetText) : base(location, dateTimeStamp,"TWEET")
         {

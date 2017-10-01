@@ -14,7 +14,12 @@ namespace GeospatialRecommender.Events.Tests
         [TestMethod()]
         public void GRLocationTest()
         {
-            Assert.Fail();
+            double lat = 0;
+            double longt = 0;
+            GRLocation location1 = new GRLocation(lat, longt);          
+
+            Assert.AreEqual(lat, location1.Latitude);
+            Assert.AreEqual(longt, location1.Longitude);
         }
     }
 }

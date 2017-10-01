@@ -1,0 +1,13 @@
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\GeospatialRecommenderTests.dll
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\GeospatialRecommenderTests.pdb
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\GeospatialRecommender.exe
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\BingMapsRESTToolkit.dll
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\GeospatialRecommender.pdb
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\BingMapsRESTToolkit.pdb
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\bin\Debug\BingMapsRESTToolkit.xml
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\obj\Debug\GeospatialRecommenderTests.csprojResolveAssemblyReference.cache
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\obj\Debug\GeospatialRecommenderTests.dll
+D:\UserFiles\Desktop\GeospatialRecommender\GeospatialRecommenderTests\obj\Debug\GeospatialRecommenderTests.pdb
