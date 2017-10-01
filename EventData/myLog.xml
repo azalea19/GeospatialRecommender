@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv = "http://www.w3.org/2001/12/soap-envelope" soapenv:encodingStyle = "http://www.w3.org/2001/12/soap-encoding">
+<lle:soapenv xmlns:lle="http://www.xyz.org/lifelogevents">
+  <lle:Event>
+    <eventid>ID1</eventid>
+    <lle:tweet>
+      <lle:text>What a nice day!</lle:text>
+      <lle:location>
+        <lle:lat>-28.6134594240044</lle:lat>
+        <lle:long>132.890625</lle:long>
+      </lle:location>
+      <lle:datetimestamp>1/10/2017 7:29:12 PM</lle:datetimestamp>
+    </lle:tweet>
+  </lle:Event>
+</lle:soapenv></soapenv:Envelope>
