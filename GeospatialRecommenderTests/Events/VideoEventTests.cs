@@ -19,9 +19,9 @@ namespace GeospatialRecommender.Events.Tests
             DateTime dtEnd = DateTime.Now;
             VideoEvent ve = new VideoEvent(new GRLocation(0, 0), expectedPath, dtStart.ToString(), dtEnd.ToString());
 
-            Assert.AreEqual(expectedPath, ve.GetVideoFilePath());
-            Assert.AreEqual(dtStart.ToString(), ve.GetStartTimeStamp());
-            Assert.AreEqual(dtEnd.ToString(), ve.GetEndTimeStamp());
+            Assert.AreEqual(expectedPath, ve.VideoFilePath);
+            Assert.AreEqual(dtStart.ToString(), ve.StartTimeStamp);
+            Assert.AreEqual(dtEnd.ToString(), ve.EndTimeStamp);
         }
 
 
@@ -30,7 +30,7 @@ namespace GeospatialRecommender.Events.Tests
         {         
             DateTime dtStart = DateTime.Now;         
             VideoEvent ve = new VideoEvent(new GRLocation(0, 0), "", dtStart.ToString(),"");        
-            Assert.AreEqual(dtStart.ToString(), ve.GetStartTimeStamp());         
+            Assert.AreEqual(dtStart.ToString(), ve.StartTimeStamp);         
         }
 
         [TestMethod()]
@@ -38,7 +38,7 @@ namespace GeospatialRecommender.Events.Tests
         {            
             DateTime dtEnd = DateTime.Now;
             VideoEvent ve = new VideoEvent(new GRLocation(0, 0), "", "", dtEnd.ToString());          
-            Assert.AreEqual(dtEnd.ToString(), ve.GetEndTimeStamp());
+            Assert.AreEqual(dtEnd.ToString(), ve.EndTimeStamp);
         }
 
         [TestMethod()]
@@ -46,7 +46,7 @@ namespace GeospatialRecommender.Events.Tests
         {
             string expectedPath = "video.avi";            
             VideoEvent ve = new VideoEvent(new GRLocation(0, 0), expectedPath, "", "");
-            Assert.AreEqual(expectedPath, ve.GetVideoFilePath());
+            Assert.AreEqual(expectedPath, ve.VideoFilePath);
         }
     }
 }

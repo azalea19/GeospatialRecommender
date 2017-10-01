@@ -20,6 +20,7 @@ namespace GeospatialRecommender.EventForms
             InitializeComponent();
             fileName = null;
             eventLocation = null;
+            dt = dtPicker.Value;
         }
 
         private void btn_choosePhoto_Click(object sender, EventArgs e)
@@ -72,9 +73,10 @@ namespace GeospatialRecommender.EventForms
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
+            dt = dtPicker.Value;
             if (Ready())
             {
-                Event newEvent = new PhotoEvent(new GRLocation(eventLocation.Latitude, eventLocation.Longitude), fileName, dt.ToString());
+                Event newEvent = new PhotoEvent(new GRLocation(eventLocation.Latitude, eventLocation.Longitude), dt.ToString(),fileName);
                 GREventManager.AddEvent(newEvent);
                 MessageBox.Show("Event successfully added!");
                 this.Hide();

@@ -17,7 +17,7 @@ namespace GeospatialRecommender.Tests
         {
             string expectedPath = "myphoto.png";
             PhotoEvent pe = new PhotoEvent(new GRLocation(0, 0), "", expectedPath);
-            Assert.AreEqual(expectedPath, pe.GetPhotoFilePath());
+            Assert.AreEqual(expectedPath, pe.PhotoFilePath);
         }
 
         [TestMethod()]
@@ -25,7 +25,7 @@ namespace GeospatialRecommender.Tests
         {
             string expectedPath = "myphoto.png";
             PhotoEvent pe = new PhotoEvent(new GRLocation(0, 0), "", expectedPath);
-            Assert.AreEqual(expectedPath, pe.GetPhotoFilePath());
+            Assert.AreEqual(expectedPath, pe.PhotoFilePath);
         }
     }
 }

@@ -180,11 +180,12 @@ namespace GeospatialRecommender
 
         private static void CheckMaxID(Event e)
         {
-            if(e.ID > maxID)
+            if(e.EventID > maxID)
             {
-                maxID = e.ID;
+                maxID = e.EventID;
             }
         }
+
         private static int maxID = 0;
     }
 }

@@ -25,6 +25,10 @@ namespace GeospatialRecommender
             {
                 return statusText;
             }
+            set
+            {
+                statusText = value;
+            }
         }
 
         private string statusText;

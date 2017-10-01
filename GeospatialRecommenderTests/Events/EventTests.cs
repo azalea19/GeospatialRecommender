@@ -19,7 +19,7 @@ namespace GeospatialRecommender.Tests
         {
             GRLocation expectedLocation = new GRLocation(10, 12);            
             TweetEvent te = new TweetEvent(expectedLocation, "dateTime", "some text");
-            GRLocation eventLocation = te.GetLocation();
+            GRLocation eventLocation = te.EventLocation;
 
             Assert.AreEqual(expectedLocation, eventLocation);
         }
@@ -30,9 +30,9 @@ namespace GeospatialRecommender.Tests
             GRLocation original = new GRLocation(0, 0);
             GRLocation expectedLocation = new GRLocation(10, 12);
             TweetEvent te = new TweetEvent(original, "dateTime", "some text");
-            te.SetLocation(expectedLocation);
+            te.EventLocation = expectedLocation;
 
-            Assert.AreEqual(expectedLocation, te.GetLocation());
+            Assert.AreEqual(expectedLocation, te.EventLocation);
         }
 
         [TestMethod()]
@@ -41,7 +41,7 @@ namespace GeospatialRecommender.Tests
             DateTime expectedTime = DateTime.Now;
             TweetEvent te = new TweetEvent(new GRLocation(0, 0), expectedTime.ToString(), "some text");
 
-            Assert.AreEqual(expectedTime.ToString(), te.GetDT());
+            Assert.AreEqual(expectedTime.ToString(), te.EventDateTime);
         }
     }
 }

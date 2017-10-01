@@ -82,7 +82,7 @@ namespace GeospatialRecommender
                 foreach (KeyValuePair<int, Event> pair in map)
                 {
                     Pushpin pin = new Pushpin();
-                    pin.Location =  new Location(pair.Value.GetLocation().Latitude, pair.Value.GetLocation().Longitude);
+                    pin.Location =  new Location(pair.Value.EventLocation.Latitude, pair.Value.EventLocation.Longitude);
                     //Adds the pushpin to the map.
                     instance.Map.Children.Add(pin);
                 }
@@ -91,11 +91,11 @@ namespace GeospatialRecommender
             {
                 foreach(KeyValuePair<int,Event> pair in map)
                 {
-                    if(pair.Value.eventType == eventsToShow.ToString())
+                    if(pair.Value.EventType == eventsToShow.ToString())
                     {
                         //The pushpin to add to the map.
                         Pushpin pin = new Pushpin();
-                        pin.Location = new Location(pair.Value.GetLocation().Latitude,pair.Value.GetLocation().Longitude);
+                        pin.Location = new Location(pair.Value.EventLocation.Latitude,pair.Value.EventLocation.Longitude);
                         //Adds the pushpin to the map.
                         instance.Map.Children.Add(pin);
                     }

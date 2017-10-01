@@ -27,7 +27,7 @@ namespace GeospatialRecommender.Events
                 bool unique = true;
                 foreach (KeyValuePair<int,Event> pair in eventMap)
                 {
-                    if(events[i].ID == pair.Value.ID)
+                    if(events[i].EventID == pair.Value.EventID)
                     {
                         //Duplicate ID found create new ID                                            
                         unique = false;
@@ -37,22 +37,22 @@ namespace GeospatialRecommender.Events
 
                 if(unique)
                 {             
-                    maxEventID = events[i].ID > maxEventID ? events[i].ID : maxEventID;
+                    maxEventID = events[i].EventID > maxEventID ? events[i].EventID : maxEventID;
                 }
                 else
                 {
-                    events[i].ID = ++maxEventID;
+                    events[i].EventID = ++maxEventID;
                 }
 
-                eventMap.Add(events[i].ID, events[i]);
+                eventMap.Add(events[i].EventID, events[i]);
             }
         }
          
         public static void AddEvent(Event eventItem)
         {
             ++maxEventID;
-            eventItem.ID = maxEventID;
-            eventMap.Add(eventItem.ID, eventItem);
+            eventItem.EventID = maxEventID;
+            eventMap.Add(eventItem.EventID, eventItem);
         }
 
         public static Event GetEvent(int ID, Event e)

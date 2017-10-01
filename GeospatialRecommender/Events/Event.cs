@@ -8,25 +8,7 @@ using System.Threading.Tasks;
 namespace GeospatialRecommender
 {
     public abstract class Event
-    {
-        //Public members
-        public GRLocation GetLocation()
-        {
-            return eventLocation;
-        }
-
-        public void SetLocation(GRLocation location)
-        {
-            this.eventLocation = location;
-        }
-
-        public string GetDT()
-        {
-            return dateTimeStamp;
-        }
-        
-
-        //Protected members
+    {     
         protected Event(GRLocation location, string dateTimeStamp, string eventType)
         {
             this.eventLocation = location;
@@ -43,10 +25,58 @@ namespace GeospatialRecommender
             this.eventType = eventType;
         }
 
-        //Private members
+        public GRLocation EventLocation
+        {
+            get
+            {
+                return eventLocation;
+            }
+            set
+            {
+                eventLocation = value;
+            }
+        }
+
+        public string EventDateTime
+        {
+            get
+            {
+                return dateTimeStamp;
+            }
+            set
+            {
+                dateTimeStamp = value;
+            }
+        }
+
+        public int EventID
+        {
+            get
+            {
+                return ID;
+            }
+            set
+            {
+                ID = value;
+            }
+        }
+
+        public string EventType
+        {
+            get
+            {
+                return eventType;
+            }
+            set
+            {
+                eventType = value;
+            }
+        }
+
+
         private GRLocation eventLocation;
         private string dateTimeStamp;
-        public int ID;
-        public string eventType;
+        private int ID;
+        private string eventType;
     }
 }

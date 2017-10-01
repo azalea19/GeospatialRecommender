@@ -19,9 +19,9 @@ namespace GeospatialRecommender.Events.Tests
             DateTime dtEnd = DateTime.Now;
             TrackLogEvent te = new TrackLogEvent(new GRLocation(0, 0), expectedFilePath, dtStart.ToString(), dtEnd.ToString());
 
-            Assert.AreEqual(expectedFilePath, te.GetTrackLogFilePath());
-            Assert.AreEqual(dtStart.ToString(), te.GetStartTimeStamp());
-            Assert.AreEqual(dtEnd.ToString(), te.GetEndTimeStamp());
+            Assert.AreEqual(expectedFilePath, te.TrackLogFilePath);
+            Assert.AreEqual(dtStart.ToString(), te.StartTimeStamp);
+            Assert.AreEqual(dtEnd.ToString(), te.EndTimeStamp);
 
         }
 
@@ -30,7 +30,7 @@ namespace GeospatialRecommender.Events.Tests
         {
             DateTime dtStart = DateTime.Now;           
             TrackLogEvent te = new TrackLogEvent(new GRLocation(0, 0), "", dtStart.ToString(), "");     
-            Assert.AreEqual(dtStart.ToString(), te.GetStartTimeStamp());          
+            Assert.AreEqual(dtStart.ToString(), te.StartTimeStamp);          
         }
 
         [TestMethod()]
@@ -38,7 +38,7 @@ namespace GeospatialRecommender.Events.Tests
         {       
             DateTime dtEnd = DateTime.Now;
             TrackLogEvent te = new TrackLogEvent(new GRLocation(0, 0), "", "", dtEnd.ToString());
-            Assert.AreEqual(dtEnd.ToString(), te.GetEndTimeStamp());
+            Assert.AreEqual(dtEnd.ToString(), te.EndTimeStamp);
         }
 
         [TestMethod()]
@@ -46,7 +46,7 @@ namespace GeospatialRecommender.Events.Tests
         {
             string expectedFilePath = "myfile.gpx";          
             TrackLogEvent te = new TrackLogEvent(new GRLocation(0, 0), expectedFilePath, "", "");
-            Assert.AreEqual(expectedFilePath, te.GetTrackLogFilePath());
+            Assert.AreEqual(expectedFilePath, te.TrackLogFilePath);
         }
     }
 }

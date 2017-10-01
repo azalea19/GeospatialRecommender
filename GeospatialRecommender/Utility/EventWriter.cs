@@ -35,10 +35,10 @@ namespace GeospatialRecommender.Utility
             writer.WriteStartElement(ns+"Event");
 
             writer.WriteStartElement("eventid");
-            writer.WriteString("ID" + aEvent.ID);
+            writer.WriteString("ID" + aEvent.EventID);
             writer.WriteEndElement();
 
-            switch (aEvent.eventType)
+            switch (aEvent.EventType)
             {
                 case ("STATUS"):
                     Write(ns, writer, (StatusUpdateEvent)aEvent);
@@ -65,13 +65,13 @@ namespace GeospatialRecommender.Utility
             writer.WriteStartElement(ns + "photo");
 
             writer.WriteStartElement(ns + "filepath");
-            writer.WriteString(aEvent.GetPhotoFilePath());
+            writer.WriteString(aEvent.PhotoFilePath);
             writer.WriteEndElement();
 
-            Write(ns, writer, aEvent.GetLocation());
+            Write(ns, writer, aEvent.EventLocation);
 
             writer.WriteStartElement(ns + "datetimestamp");
-            Write(ns, writer, aEvent.GetDT());
+            Write(ns, writer, aEvent.EventDateTime);
             writer.WriteEndElement();            
 
             writer.WriteEndElement();
@@ -83,19 +83,18 @@ namespace GeospatialRecommender.Utility
             writer.WriteStartElement(ns + "video");
 
             writer.WriteStartElement(ns + "filepath");
-            writer.WriteString(aEvent.GetVideoFilePath());
+            writer.WriteString(aEvent.VideoFilePath);
             writer.WriteEndElement();
 
-            Write(ns, writer, aEvent.GetLocation());
+            Write(ns, writer, aEvent.EventLocation);
 
             writer.WriteStartElement(ns + "start-time");
-            Write(ns, writer, aEvent.GetDT());
+            Write(ns, writer, aEvent.EventDateTime);
             writer.WriteEndElement();
 
             writer.WriteStartElement(ns + "end-time");
-            Write(ns, writer, aEvent.GetDT());
+            Write(ns, writer, aEvent.EventDateTime);
             writer.WriteEndElement();
-
             
             writer.WriteEndElement();
         }
@@ -108,8 +107,8 @@ namespace GeospatialRecommender.Utility
             writer.WriteString(aEvent.StatusText);
             writer.WriteEndElement();
 
-            Write(ns, writer, aEvent.GetLocation());
-            Write(ns, writer, aEvent.GetDT());
+            Write(ns, writer, aEvent.EventLocation);
+            Write(ns, writer, aEvent.EventDateTime);
 
             writer.WriteEndElement();
         }
@@ -122,15 +121,32 @@ namespace GeospatialRecommender.Utility
             writer.WriteString(aEvent.TweetText);
             writer.WriteEndElement();
 
-            Write(ns, writer,aEvent.GetLocation());
-            Write(ns, writer, aEvent.GetDT());
+            Write(ns, writer,aEvent.EventLocation);
+            Write(ns, writer, aEvent.EventDateTime);
           
             writer.WriteEndElement();
         }
 
         public static void Write(string ns, XmlTextWriter writer, TrackLogEvent aEvent)
         {
-            
+            writer.WriteStartElement(ns + "tracklog");
+
+            writer.WriteStartElement(ns + "filepath");
+            writer.WriteString(aEvent.TrackLogFilePath);
+            writer.WriteEndElement();
+
+            Write(ns, writer, aEvent.EventLocation);
+
+
+            writer.WriteStartElement(ns + "start-time");
+            Write(ns, writer, aEvent.EventDateTime);
+            writer.WriteEndElement();
+
+            writer.WriteStartElement(ns + "end-time");
+            Write(ns, writer, aEvent.EventDateTime);
+            writer.WriteEndElement();
+
+            writer.WriteEndElement();
         }
 
         private static void Write(string ns, XmlTextWriter writer, GRLocation location)

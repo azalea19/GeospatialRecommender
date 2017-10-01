@@ -18,10 +18,17 @@ namespace GeospatialRecommender
         {
             this.photoFilePath = photoFilePath;
         }
-
-        public string GetPhotoFilePath()
+        
+        public string PhotoFilePath
         {
-            return photoFilePath;
+            get
+            {
+                return photoFilePath;
+            }
+            set
+            {
+                photoFilePath = value;
+            }
         }
 
         private string photoFilePath;

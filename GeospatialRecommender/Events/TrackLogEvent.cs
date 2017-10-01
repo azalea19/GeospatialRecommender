@@ -22,19 +22,41 @@ namespace GeospatialRecommender.Events
         }
 
 
-        public string GetStartTimeStamp()
+        public string StartTimeStamp
         {
-            return startTimeStamp;
+            get
+            {
+                return startTimeStamp;
+            }
+            set
+            {
+                startTimeStamp = value;
+            }
         }
 
-        public string GetEndTimeStamp()
+        public string EndTimeStamp
         {
-            return endTimeStamp;
+            get
+            {
+                return endTimeStamp;
+            }
+            set
+            {
+                endTimeStamp = value;
+            }
         }
 
-        public string GetTrackLogFilePath()
+        public string TrackLogFilePath
         {
-            return logFilePath;
+            get
+            {
+                return logFilePath;
+            }
+            set
+            {
+                logFilePath = value;
+            }
+           
         }
 
         private string startTimeStamp;

@@ -22,19 +22,42 @@ namespace GeospatialRecommender.Events
             this.endTimeStamp = endTimeStamp;
         }
 
-        public string GetStartTimeStamp()
+        public string StartTimeStamp
         {
-            return startTimeStamp;
+            get
+            {
+                return startTimeStamp;
+            }
+            set
+            {
+                startTimeStamp = value;
+            }
+           
         }
 
-        public string GetEndTimeStamp()
+        public string EndTimeStamp
         {
-            return endTimeStamp;
+            get
+            {
+                return endTimeStamp;
+            }
+            set
+            {
+                endTimeStamp = value;
+            }
+            
         }
 
-        public string GetVideoFilePath()
+        public string VideoFilePath
         {
-            return videoFilePath;
+            get
+            {
+                return videoFilePath;
+            }
+            set
+            {
+                videoFilePath = value;
+            }
         }
 
         private string startTimeStamp;

@@ -23,6 +23,7 @@ namespace GeospatialRecommender
             statusUpdateForm = new frm_statusUpdateEvent();
             tweetEventForm = new frm_tweetEvent();
             addressForm = new frm_address();
+            trackLogEventForm = new frm_trackLogEvent();
             eventLocation = null;
         }
 
@@ -73,7 +74,8 @@ namespace GeospatialRecommender
 
         private void btn_addlog_Click(object sender, EventArgs e)
         {
-
+            trackLogEventForm.ShowForm(eventLocation);
+            this.Hide();
         }
 
         private void btn_changeLocation_Click(object sender, EventArgs e)
@@ -95,6 +97,7 @@ namespace GeospatialRecommender
         private frm_statusUpdateEvent statusUpdateForm;
         private frm_tweetEvent tweetEventForm;
         private frm_address addressForm;
+        private frm_trackLogEvent trackLogEventForm;
 
         private Location eventLocation;
        
